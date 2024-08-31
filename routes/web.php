@@ -48,12 +48,6 @@ Route::get('/job/{id}', function ($id) {
         ],
     ];
 
-    // foreach ($jobs as $job) {
-    //     if ($job['id'] == $id) {
-    //         dd($job);
-    //     }
-    // }
-
     $job = Arr::first($jobs, fn($job) => $job['id'] == $id);
 
     return view('job', ['job' => $job]);
